@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Politique de confidentialité — YokaiGo</title>
+<meta name="description" content="Politique de confidentialité — YokaiGo">
+<meta name="robots" content="index,follow">
+<style>
+:root{
+  --shu:#E8622C; --ai:#264B70; --asagi:#69B6C4; --yamabuki:#FFC93C;
+  --enji:#9E3B3B; --nezumi:#8E8C87;
+  --bg:#FFF9F0; --surface:#FFFFFF; --text:#2B2118; --muted:#6B6259;
+  --line:#E7DDCD; --code-bg:#F5EFE4; --flag-bg:#FFF0C2; --flag-text:#7A5200;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#191512; --surface:#221D19; --text:#F0E6D8; --muted:#A79C8E;
+         --line:#3A322B; --code-bg:#15120F;
+         --flag-bg:#4A3A12; --flag-text:#FFD974; }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);
+  font-family:'Segoe UI',-apple-system,'Helvetica Neue',
+              'Hiragino Kaku Gothic ProN','Yu Gothic',Meiryo,sans-serif;
+  font-size:16px;line-height:1.7}
+main{max-width:820px;margin:0 auto;padding:48px 24px 96px}
+
+h1{font-size:2rem;line-height:1.22;margin:0 0 .5em;padding-bottom:.35em;
+   border-bottom:4px solid var(--shu)}
+h2{font-size:1.35rem;margin:2.4em 0 .7em;padding-left:12px;
+   border-left:5px solid var(--yamabuki)}
+h3{font-size:1.1rem;margin:1.9em 0 .5em;color:var(--shu)}
+@media (prefers-color-scheme: dark){ h3{color:var(--yamabuki)} }
+p,li{margin:.7em 0}
+a{color:var(--ai)}
+@media (prefers-color-scheme: dark){ a{color:var(--asagi)} }
+hr{border:0;border-top:1px solid var(--line);margin:2.4em 0}
+strong{font-weight:650}
+
+blockquote{margin:1.2em 0;padding:.6em 1.1em;background:var(--surface);
+  border-left:4px solid var(--ai);border-radius:0 8px 8px 0;color:var(--muted)}
+blockquote p{margin:.2em 0}
+
+table{border-collapse:collapse;width:100%;margin:1.3em 0;font-size:14.5px;
+  background:var(--surface);border-radius:10px;overflow:hidden;
+  box-shadow:0 1px 3px rgba(0,0,0,.07)}
+th{background:var(--ai);color:#fff;text-align:left;padding:10px 12px;
+   font-weight:600;font-size:13.5px}
+td{padding:9px 12px;border-top:1px solid var(--line);vertical-align:top}
+tbody tr:nth-child(even){background:rgba(0,0,0,.022)}
+@media (prefers-color-scheme: dark){ tbody tr:nth-child(even){background:rgba(255,255,255,.03)} }
+/* Wide tables scroll inside their own box; the page itself never does. */
+.tablewrap{overflow-x:auto;max-width:100%;margin:1.3em 0}
+.tablewrap table{margin:0}
+
+code{background:var(--code-bg);padding:.13em .4em;border-radius:5px;
+  font-family:'Cascadia Code',Consolas,'SF Mono',monospace;font-size:.9em}
+
+/* What is left to fill in, impossible to miss on a published page. */
+.todo{background:var(--flag-bg);color:var(--flag-text);padding:.1em .45em;
+  border-radius:4px;font-weight:600;font-size:.93em;
+  box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.todo::before{content:"⚠ à compléter : ";font-weight:700;opacity:.75}
+
+footer{max-width:820px;margin:0 auto;padding:0 24px 64px;color:var(--muted);
+  font-size:13.5px;border-top:1px solid var(--line);padding-top:20px}
+footer a{margin-right:18px}
+
+@media print{
+  body{background:#fff;color:#000;font-size:11pt}
+  main{padding:0}
+  h2{break-after:avoid}
+  table,blockquote{break-inside:avoid}
+  .todo{background:none;color:#000;border:1px solid #000}
+}
+</style>
+</head>
+<body>
+<main>
+<h1>Politique de confidentialité — YokaiGo</h1>
+<p><strong>Version 1.0 — en vigueur au <span class="todo">date de mise en ligne</span></strong></p>
+<hr />
+<h2>En résumé</h2>
+<p>YokaiGo est une application d'apprentissage du japonais qui fonctionne <strong>sans compte et sans
+serveur</strong>. Votre progression — héros, monnaie du jeu, mondes franchis, révisions à venir, résultats
+d'examens blancs — est enregistrée <strong>sur votre appareil uniquement</strong>. L'éditeur n'en reçoit aucune
+copie et ne peut pas la consulter.</p>
+<p>L'application ne contient <strong>aucune régie publicitaire, aucun traceur et aucun outil de mesure
+d'audience</strong>. Elle n'effectue aucune requête vers un serveur de l'éditeur, et ne vous profile ni à
+des fins publicitaires ni commerciales.</p>
+<p>Quatre situations font sortir une donnée de votre appareil <strong>depuis l'application</strong>, et chacune est
+décrite ci-dessous : la reconnaissance vocale, le signalement d'un exercice, l'achat d'un contenu
+payant, et les mesures que la boutique effectue elle-même. S'y ajoute, si vous ouvrez les présentes
+pages, ce que l'hébergeur du site enregistre de votre visite.</p>
+<h2>1. Responsable du traitement</h2>
+<div class="tablewrap"><table>
+<tbody>
+<tr>
+<td><strong>Responsable</strong></td>
+<td>Thibaud ALENGRY, entrepreneur individuel</td>
+</tr>
+<tr>
+<td><strong>Adresse</strong></td>
+<td>108 avenue de Montardon, 64000 Pau, France</td>
+</tr>
+<tr>
+<td><strong>Téléphone</strong></td>
+<td>+33 7 88 14 20 48</td>
+</tr>
+<tr>
+<td><strong>SIRET</strong></td>
+<td>920 532 967 00014</td>
+</tr>
+<tr>
+<td><strong>Contact</strong></td>
+<td>108 avenue de Montardon, 64000 Pau, France</td>
+</tr>
+</tbody>
+</table></div>
+<p>Compte tenu de la nature et du volume des traitements décrits ci-dessous, la désignation d'un
+délégué à la protection des données n'est pas requise au sens de l'article 37 du règlement général
+sur la protection des données. Toute question relative aux données personnelles est traitée à
+l'adresse de contact ci-dessus.</p>
+<h2>2. Les données traitées, traitement par traitement</h2>
+<h3>2.1 Votre progression dans le jeu</h3>
+<p><strong>Ce qui est traité.</strong> Le héros choisi, le nom d'affichage éventuellement saisi, la monnaie du jeu,
+les mondes et les nœuds franchis, les créatures rencontrées, les omamori détenus, l'état de chaque
+élément à réviser et sa date de prochaine révision, les résultats des examens blancs, les jours
+d'activité et le temps passé, ainsi que vos réglages — thème, sons, vibrations.</p>
+<p><strong>Où elles sont conservées.</strong> Dans une base de données locale, à l'intérieur de l'espace privé de
+l'application sur votre appareil. <strong>Ces données ne sont jamais transmises, ni à l'éditeur, ni à un
+tiers</strong>, sous la réserve décrite au point 2.3 lorsque vous choisissez d'envoyer un signalement.</p>
+<p><strong>Pourquoi.</strong> Elles sont indispensables au fonctionnement du jeu : sans elles, l'application ne
+saurait ni où vous en êtes, ni quoi vous faire réviser.</p>
+<p><strong>Base légale.</strong> L'exécution du contrat conclu par l'acceptation des conditions générales
+d'utilisation, au sens de l'article 6.1.b du règlement général sur la protection des données.</p>
+<p><strong>Durée.</strong> Jusqu'à ce que vous les effaciez. La fonction « Recommencer l'aventure » de l'écran de
+profil, qui demande confirmation avant d'agir, les supprime immédiatement et définitivement. La
+désinstallation de l'application produit le même effet.</p>
+<h3>2.2 La reconnaissance vocale</h3>
+<p><strong>Ce qui est traité.</strong> Le son capté par le microphone pendant la durée d'un exercice de
+prononciation, et la transcription que le moteur de reconnaissance en produit.</p>
+<p><strong>Quand.</strong> Uniquement lorsque vous appuyez sur le bouton de parole d'un exercice de prononciation.
+L'autorisation d'accès au microphone est demandée à ce moment précis, jamais au lancement de
+l'application, et son refus n'empêche pas d'utiliser le reste de l'application. Sur iOS, une seconde
+autorisation, propre à la reconnaissance vocale, est demandée au même moment.</p>
+<p><strong>Qui traite quoi.</strong> L'application ne reconnaît pas la parole elle-même : elle s'adresse au <strong>moteur
+de reconnaissance vocale installé sur votre appareil</strong>. Selon votre appareil et ses réglages, ce
+moteur peut fonctionner hors ligne ou transmettre le son au fournisseur de ce moteur — le plus
+souvent Google sur Android, Apple sur iOS, un autre éditeur si vous en avez installé un.
+<strong>Ce fournisseur traite alors ce son sous sa propre responsabilité, selon sa propre politique de
+confidentialité, sur laquelle l'éditeur n'a aucune prise.</strong> L'application interroge le service de
+reconnaissance que le système déclare, sans en désigner aucun.</p>
+<p>Vous pouvez vérifier et modifier ce comportement dans les réglages de votre appareil, qui permettent
+en général d'installer un module de reconnaissance hors ligne.</p>
+<p><strong>Ce que l'application fait du résultat.</strong> Elle reçoit la transcription, la compare à la réponse
+attendue, affiche le verdict, puis l'efface de sa mémoire. <strong>Ni le son, ni la transcription ne sont
+écrits sur le disque, et rien n'en est transmis à l'éditeur.</strong> Seul le résultat de l'exercice —
+juste ou faux — est enregistré dans votre progression locale.</p>
+<p><strong>Base légale.</strong> Votre consentement, matérialisé par l'autorisation d'accès au microphone, au sens
+de l'article 6.1.a du règlement. Vous pouvez le retirer à tout moment dans les réglages de votre
+appareil.</p>
+<p><strong>Durée.</strong> Le temps de la tentative. Rien n'est conservé au-delà.</p>
+<h3>2.3 Le signalement d'un exercice</h3>
+<p><strong>Ce qui est traité.</strong> Lorsque vous signalez un exercice, l'application prépare un <strong>brouillon de
+courriel</strong> — elle ne l'envoie pas. Ce brouillon contient l'identifiant de l'élément concerné, le
+format de la question, la version du pack de contenu, l'écran depuis lequel vous signalez et, pour
+un combat, le monde et le nœud concernés, l'énoncé affiché, la phrase jouée le cas échéant, les
+propositions, la bonne réponse, la date, et ce que vous écrivez pour décrire le problème.</p>
+<p>L'envoi est votre décision. Si vous envoyez ce courriel, l'éditeur reçoit son contenu ainsi que
+<strong>l'adresse électronique depuis laquelle vous l'avez envoyé</strong> et tout élément que vous auriez
+vous-même ajouté au message.</p>
+<p><strong>Pourquoi.</strong> Corriger les erreurs du contenu pédagogique, et vous répondre si nécessaire.</p>
+<p><strong>Base légale.</strong> L'intérêt légitime de l'éditeur à corriger son contenu, au sens de l'article 6.1.f
+du règlement. Cet intérêt est mis en balance avec vos droits par le fait que l'envoi est
+volontaire, que le brouillon vous est montré en entier avant envoi, et qu'aucune donnée n'est
+recueillie si vous renoncez à l'envoyer.</p>
+<p><strong>Destinataire.</strong> La boîte de réception de l'éditeur, hébergée par <span class="todo">fournisseur de messagerie</span>
+selon les conditions applicables à ce service.</p>
+<p><strong>Si aucune application de messagerie ne répond</strong>, le rapport est copié dans le presse-papiers de
+votre appareil et rien n'est envoyé.</p>
+<p><strong>Durée.</strong> Le signalement reçu est conservé jusqu'à son traitement, et supprimé au plus tard douze
+mois après sa réception.</p>
+<h3>2.4 Les achats</h3>
+<p><strong>Ce qui est traité.</strong> Le contrat de fourniture du contenu payant est conclu avec l'éditeur ; la
+commande, l'encaissement et la facturation passent en revanche exclusivement par la boutique —
+Google Play ou App Store —, qui n'est pas l'éditeur de l'application.</p>
+<p><strong>L'éditeur ne reçoit et ne conserve aucune donnée bancaire</strong>, aucun numéro de carte et aucune
+adresse de facturation. Il reçoit de la boutique des <strong>états de vente</strong>, principalement agrégés,
+pouvant comporter un identifiant de commande, un pays, un montant et une date — éléments nécessaires
+à sa comptabilité et au traitement d'une réclamation.</p>
+<p>Google et Apple traitent les données de paiement en qualité de responsables de traitement
+indépendants, selon leurs propres politiques de confidentialité.</p>
+<p><strong>Base légale.</strong> L'exécution du contrat de vente (article 6.1.b du règlement) et le respect des
+obligations légales comptables et fiscales de l'éditeur (article 6.1.c).</p>
+<p><strong>Durée.</strong> Dix ans pour les pièces comptables, conformément à l'article L123-22 du code de commerce.</p>
+<h3>2.5 Les mesures effectuées par les boutiques</h3>
+<p>Google et Apple mettent à la disposition de l'éditeur, pour toute application publiée :</p>
+<ul>
+<li>des <strong>statistiques agrégées</strong> — nombre d'installations et de désinstallations, versions d'Android
+  et d'iOS, modèles d'appareils, pays ;</li>
+<li>les <strong>notes et avis publics</strong>, qui portent le nom d'affichage choisi par leur auteur ;</li>
+<li>des <strong>rapports de plantage et de blocage techniques</strong>, qui décrivent un incident individuel et
+  peuvent contenir des informations techniques sur l'appareil.</li>
+</ul>
+<p>Ces données sont collectées par les boutiques elles-mêmes, indépendamment de l'application, qui ne
+contient aucun outil de mesure. <strong>Hors les avis publics, ces données sont agrégées ou techniques, et
+l'éditeur n'a aucun moyen de les rattacher à une personne identifiée.</strong></p>
+<p><strong>Base légale.</strong> L'intérêt légitime de l'éditeur à connaître la stabilité et la diffusion de son
+application, et à répondre aux avis qui lui sont adressés (article 6.1.f du règlement).</p>
+<p><strong>Durée.</strong> Selon les politiques de conservation propres à chaque boutique, que nous vous invitons à
+consulter.</p>
+<h3>2.6 Le site qui héberge les présents documents</h3>
+<p>La consultation des présentes pages entraîne, comme pour tout site, l'enregistrement de données
+techniques de connexion par l'hébergeur — adresse IP, date et heure, page demandée —, à des fins de
+sécurité et de bon fonctionnement.</p>
+<p><strong>Hébergeur.</strong> <span class="todo">dénomination, adresse et téléphone de l'hébergeur</span>.
+<strong>Base légale.</strong> L'intérêt légitime à assurer la sécurité du site.
+<strong>Durée.</strong> <span class="todo">durée de conservation des journaux, généralement six à douze mois</span>.</p>
+<p><span class="todo">Ajouter ici la mention des éventuels cookies si le site en dépose. Une page statique n'en dépose
+normalement aucun.</span></p>
+<h2>3. Ce que l'application ne fait pas</h2>
+<p>Pour lever toute ambiguïté, l'application :</p>
+<ul>
+<li>n'affiche <strong>aucune publicité</strong> et ne contient aucune régie publicitaire ;</li>
+<li>n'intègre <strong>aucun outil de mesure d'audience ni d'analyse comportementale</strong> — ni Firebase
+  Analytics, ni Google Analytics, ni équivalent ;</li>
+<li>n'intègre <strong>aucun outil tiers de remontée de plantages</strong> ;</li>
+<li>ne procède à <strong>aucun profilage à des fins publicitaires, commerciales ou d'évaluation de votre
+  personne</strong> ; le calcul des révisions, qui adapte le programme à vos réponses, s'exécute
+  entièrement sur votre appareil et n'est communiqué à personne ;</li>
+<li>ne prend <strong>aucune décision automatisée</strong> produisant des effets juridiques à votre égard ou vous
+  affectant de manière significative, au sens de l'article 22 du règlement ;</li>
+<li>ne <strong>vend, ne loue et n'échange</strong> aucune donnée ;</li>
+<li>n'accède ni à votre position, ni à vos contacts, ni à votre appareil photo, ni à vos fichiers ;</li>
+<li>n'envoie <strong>aucune notification</strong>.</li>
+</ul>
+<p>Sur Android, la seule autorisation déclarée par l'application est l'accès au microphone
+(<code>RECORD_AUDIO</code>), à laquelle s'ajoute, dès lors que des contenus payants sont proposés,
+l'autorisation de facturation de Google Play (<code>com.android.vending.BILLING</code>) — laquelle ne donne
+accès à aucune donnée de votre appareil. Sur iOS, l'application demande l'accès au microphone et
+l'autorisation de reconnaissance vocale. Les autorisations de microphone et de reconnaissance sont
+demandées au premier exercice de prononciation ; aucune autre n'est jamais demandée.</p>
+<h2>4. Destinataires des données</h2>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Destinataire</th>
+<th>À quel titre</th>
+<th>Ce qu'il reçoit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Google Ireland Limited / Google LLC</strong></td>
+<td>Distribution, encaissement, et moteur de reconnaissance vocale sur Android lorsque c'est le sien</td>
+<td>Ce que vous lui remettez directement lors d'un achat — moyen de paiement, adresse de facturation ; le son capté si son moteur fonctionne en ligne</td>
+</tr>
+<tr>
+<td><strong>Apple Distribution International Ltd / Apple Inc.</strong></td>
+<td>Distribution, encaissement, moteur de dictée sur iOS</td>
+<td>Ce que vous lui remettez directement lors d'un achat ; le son capté selon les réglages de l'appareil</td>
+</tr>
+<tr>
+<td><strong>Fournisseur du moteur de reconnaissance installé sur votre appareil</strong>, s'il n'est ni Google ni Apple</td>
+<td>Reconnaissance vocale</td>
+<td>Le son capté, si ce moteur fonctionne en ligne</td>
+</tr>
+<tr>
+<td><strong><span class="todo">fournisseur de messagerie</span></strong></td>
+<td>Messagerie de l'éditeur</td>
+<td>Contenu du signalement envoyé, et l'adresse depuis laquelle il part</td>
+</tr>
+<tr>
+<td><strong>Hébergeur du site</strong> (voir le point 2.6)</td>
+<td>Hébergement des présentes pages</td>
+<td>Données techniques de connexion au site</td>
+</tr>
+<tr>
+<td><strong><span class="todo">expert-comptable, si vous en avez un</span></strong></td>
+<td>Obligations comptables</td>
+<td>États de vente</td>
+</tr>
+</tbody>
+</table></div>
+<p>Les données de paiement vont de vous vers la boutique ; l'éditeur, lui, n'en reçoit que des états de
+vente, dans le sens inverse et sous la forme décrite au point 2.4.</p>
+<p>Aucun autre destinataire ne reçoit de donnée. L'éditeur ne communique aucune donnée à des tiers à
+des fins commerciales.</p>
+<h2>5. Transferts hors de l'Union européenne</h2>
+<p>Les traitements réalisés par Google et par Apple peuvent impliquer un transfert de données vers les
+États-Unis. Ces transferts sont encadrés par les mécanismes prévus au chapitre V du règlement,
+notamment les <strong>clauses contractuelles types</strong> adoptées par la Commission européenne et, le cas
+échéant, la certification de ces sociétés au titre du <strong>cadre de protection des données
+UE — États-Unis</strong> (<em>EU-U.S. Data Privacy Framework</em>).</p>
+<p>Le seul transfert hors de l'Union européenne auquel l'éditeur procède lui-même est l'hébergement de
+sa messagerie par <span class="todo">fournisseur de messagerie</span>, encadré par <span class="todo">le mécanisme applicable : clauses
+contractuelles types, ou certification au cadre de protection des données UE — États-Unis</span>.</p>
+<p>Conformément à l'article 13.1.f du règlement, une copie de ces garanties peut être demandée à
+l'adresse de contact figurant au point 1.</p>
+<h2>6. Durées de conservation — récapitulatif</h2>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Donnée</th>
+<th>Durée</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Progression, réglages, révisions</td>
+<td>Jusqu'à effacement par vos soins ; jamais transmise, hors ce qu'emporte un signalement que vous envoyez (point 2.3)</td>
+</tr>
+<tr>
+<td>Son capté pour un exercice de prononciation</td>
+<td>Le temps de la tentative ; rien n'est conservé</td>
+</tr>
+<tr>
+<td>Signalement d'exercice envoyé</td>
+<td>Supprimé au plus tard douze mois après sa réception</td>
+</tr>
+<tr>
+<td>Pièces comptables liées à un achat</td>
+<td>Dix ans (article L123-22 du code de commerce)</td>
+</tr>
+<tr>
+<td>Statistiques, avis et rapports de plantage des boutiques</td>
+<td>Selon les politiques de Google et d'Apple</td>
+</tr>
+<tr>
+<td>Journaux de connexion au site</td>
+<td><span class="todo">durée</span></td>
+</tr>
+</tbody>
+</table></div>
+<h2>7. Sécurité</h2>
+<p>Les données de progression sont enregistrées dans l'espace privé de l'application, isolé des autres
+applications par le système d'exploitation, et ne quittent pas l'appareil — hors les éléments repris
+dans un signalement que vous choisissez d'envoyer, décrits au point 2.3.</p>
+<p>L'absence de compte, de mot de passe et de serveur supprime par construction les risques
+correspondants : il n'existe aucun identifiant à dérober et aucune base centrale à compromettre.</p>
+<p>La sécurité physique de l'appareil, son verrouillage et ses éventuelles sauvegardes relèvent en
+revanche de vous et des réglages de votre système.</p>
+<h2>8. Vos droits</h2>
+<p>Vous disposez, dans les conditions prévues par le règlement général sur la protection des données et
+par la loi n° 78-17 du 6 janvier 1978 modifiée, des droits suivants :</p>
+<ul>
+<li><strong>droit d'accès</strong> à vos données et à leurs modalités de traitement ;</li>
+<li><strong>droit de rectification</strong> des données inexactes ;</li>
+<li><strong>droit à l'effacement</strong>, dans les limites des obligations légales de conservation ;</li>
+<li><strong>droit à la limitation</strong> du traitement ;</li>
+<li><strong>droit d'opposition</strong> à un traitement fondé sur l'intérêt légitime ;</li>
+<li><strong>droit à la portabilité</strong> des données que vous avez fournies ;</li>
+<li><strong>droit de retirer votre consentement</strong> à tout moment, pour la reconnaissance vocale, sans que ce
+  retrait remette en cause la licéité des traitements antérieurs ;</li>
+<li><strong>droit de définir des directives</strong> relatives au sort de vos données après votre décès, au sens de
+  l'article 85 de la loi du 6 janvier 1978.</li>
+</ul>
+<p><strong>Deux de ces droits s'exercent directement, sans nous écrire, et c'est le moyen le plus rapide :</strong></p>
+<ul>
+<li>pour effacer votre progression : la fonction « Recommencer l'aventure » de l'écran de profil, ou
+  la désinstallation de l'application ;</li>
+<li>pour retirer votre consentement à l'usage du microphone : les réglages d'autorisations de votre
+  appareil.</li>
+</ul>
+<p>Pour les autres droits, écrivez à 108 avenue de Montardon, 64000 Pau, France. Une réponse vous sera adressée dans le
+délai d'un mois à compter de la réception de la demande, prolongeable de deux mois en cas de
+complexité, auquel cas vous en serez informé.</p>
+<p>Une pièce d'identité ne vous sera demandée qu'en cas de doute raisonnable sur l'identité du
+demandeur.</p>
+<p><strong>Une limite qu'il faut connaître :</strong> l'éditeur ne détenant aucune copie de votre progression et
+ne disposant d'aucun identifiant vous concernant, il lui est matériellement impossible de retrouver,
+de restituer ou d'effacer ces données à votre place. C'est la contrepartie d'une application qui ne
+collecte rien.</p>
+<h2>9. Réclamation auprès de l'autorité de contrôle</h2>
+<p>Si vous estimez, après nous avoir contactés, que vos droits ne sont pas respectés, vous pouvez
+introduire une réclamation auprès de la Commission nationale de l'informatique et des libertés :</p>
+<blockquote>
+<p><strong>CNIL</strong>
+3 place de Fontenoy — TSA 80715
+75334 Paris Cedex 07
+www.cnil.fr</p>
+</blockquote>
+<h2>10. Mineurs</h2>
+<p>L'application n'est pas destinée aux personnes de moins de quinze ans. Aucun traitement n'est mis en
+œuvre dans le but de cibler des mineurs, et aucune donnée d'identification n'est collectée qui
+permettrait de connaître l'âge de l'utilisateur.</p>
+<p>Conformément à l'article 45 de la loi n° 78-17 du 6 janvier 1978 modifiée, lorsque l'utilisateur a
+moins de quinze ans, le consentement à l'usage du microphone décrit au point 2.2 doit être donné
+conjointement par lui et par le titulaire de l'autorité parentale, à qui il revient d'autoriser
+l'accès dans les réglages de l'appareil.</p>
+<p>Il appartient plus généralement aux représentants légaux de surveiller l'usage de l'application par
+un mineur, notamment l'usage du microphone et les achats, que les contrôles parentaux de Google Play
+et de l'App Store permettent de restreindre.</p>
+<h2>11. Modification de la présente politique</h2>
+<p>La présente politique peut être modifiée pour tenir compte de l'évolution de l'application ou de la
+réglementation. La version en vigueur est celle publiée à l'adresse
+<span class="todo">URL de la politique de confidentialité</span>, dont la date figure en tête, et elle reste accessible
+depuis l'écran de réglages de l'application.</p>
+<p>Toute modification substantielle est signalée sur cette page, ainsi que sur la fiche de
+l'application dans la boutique — l'application ne comportant ni compte ni notification, l'éditeur
+n'a aucun moyen de vous écrire. Le consentement à l'usage du microphone, lui, est redemandé par
+votre système d'exploitation dès lors que vous avez révoqué l'autorisation.</p>
+<h2>12. Cohérence avec les déclarations des boutiques</h2>
+<p>Les déclarations faites par l'éditeur dans le formulaire <em>Sécurité des données</em> de Google Play et
+dans la rubrique <em>Confidentialité de l'app</em> de l'App Store correspondent à la présente politique.
+L'éditeur veille à ce qu'elles y correspondent en permanence et corrige sans délai toute divergence
+constatée.</p>
+<hr />
+<p><em>Pour toute question : 108 avenue de Montardon, 64000 Pau, France.</em></p>
+</main>
+<footer>
+<a href="cgu-cgv.html">Conditions générales d'utilisation et de vente</a>
+</footer>
+</body>
+</html>
