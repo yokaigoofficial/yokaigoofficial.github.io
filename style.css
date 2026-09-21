@@ -1,0 +1,543 @@
+/* AT Development — site public. Une seule feuille, partagée par toutes les pages.
+   Les couleurs sont celles de l'application : les teintes traditionnelles
+   japonaises de son thème, sur un fond de toile écrue.
+
+   Les polices sont servies d'ici, jamais depuis un serveur tiers : la
+   politique de confidentialité ne nomme que l'hébergeur, et une police chargée
+   ailleurs y enverrait l'adresse de chaque visiteur. Ce sont celles de
+   l'application, réduites aux signes qu'elle affiche (licence SIL OFL 1.1),
+   plus un extrait de Noto Sans JP pour les quelques signes japonais de la page. */
+
+@font-face {
+  font-family: "Fredoka";
+  src: url("fonts/fredoka.woff") format("woff");
+  font-weight: 400 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Zen Maru Gothic";
+  src: url("fonts/zen-maru-gothic-medium.woff") format("woff");
+  font-weight: 400 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Zen Maru Gothic";
+  src: url("fonts/zen-maru-gothic-bold.woff") format("woff");
+  font-weight: 600 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noto Sans JP";
+  src: url("fonts/noto-sans-jp-subset.woff") format("woff");
+  font-weight: 400 700;
+  font-display: swap;
+}
+
+:root {
+  --page: #FFF6E8;        /* 生成り, la toile écrue de l'application */
+  --band: #F7EBD6;        /* la même toile, un ton plus sombre, pour alterner */
+  --card: #FFFFFF;
+  --edge: #E7DDCD;
+  --ink: #2B2118;         /* 墨 */
+  --muted: #6B6259;
+  --bar: #2B2118;
+  --on-bar: #FFF6E8;
+  --on-bar-muted: #B8AC9C;
+  --shu: #E8622C;         /* 朱, l'accent */
+  --shu-ink: #FFFFFF;
+  --ai: #264B70;          /* 藍, les liens et les titres de section */
+  --asagi: #69B6C4;
+  --yamabuki: #FFC93C;
+  --paper: #FFF6E8;       /* le fond sur lequel une créature est dessinée, clair dans les deux thèmes */
+  --shadow: 0 10px 30px rgba(43, 33, 24, .12);
+  --radius: 18px;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --page: #1B1510;
+    --band: #221B15;
+    --card: #2A211A;
+    --edge: #3E332A;
+    --ink: #F3E7D5;
+    --muted: #9C948A;
+    --bar: #120E0A;
+    --on-bar: #F3E7D5;
+    --on-bar-muted: #9C948A;
+    --shu: #F07A45;
+    --shu-ink: #1B1510;
+    --ai: #7FA8CE;
+    --shadow: 0 10px 30px rgba(0, 0, 0, .35);
+  }
+}
+
+:root[data-theme="dark"] {
+  --page: #1B1510;
+  --band: #221B15;
+  --card: #2A211A;
+  --edge: #3E332A;
+  --ink: #F3E7D5;
+  --muted: #9C948A;
+  --bar: #120E0A;
+  --on-bar: #F3E7D5;
+  --on-bar-muted: #9C948A;
+  --shu: #F07A45;
+  --shu-ink: #1B1510;
+  --ai: #7FA8CE;
+  --shadow: 0 10px 30px rgba(0, 0, 0, .35);
+}
+
+/* ---------- base ---------- */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--ink);
+  font-family: "Zen Maru Gothic", "Noto Sans JP", "Hiragino Maru Gothic ProN", "Yu Gothic", Meiryo, "Segoe UI", sans-serif;
+  font-size: 17px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+a { color: var(--ai); text-underline-offset: .18em; }
+a:hover { color: var(--shu); }
+
+h1, h2, h3 {
+  font-family: "Fredoka", "Zen Maru Gothic", sans-serif;
+  font-weight: 600;
+  line-height: 1.15;
+  margin: 0;
+  text-wrap: balance;
+}
+
+h1 { font-size: clamp(2.1rem, 5vw, 3.3rem); letter-spacing: -.01em; }
+h2 { font-size: clamp(1.5rem, 3vw, 2rem); }
+h3 { font-size: 1.2rem; }
+
+p { margin: 0; }
+
+.lede { font-size: 1.15rem; color: var(--muted); max-width: 34em; }
+
+/* Le mot japonais qui coiffe une section : la langue que le jeu apprend, à sa place. */
+.eyebrow {
+  font-family: "Fredoka", sans-serif;
+  font-weight: 500;
+  font-size: .8rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--shu);
+  display: flex;
+  align-items: baseline;
+  gap: .7em;
+  margin-bottom: .7em;
+}
+.eyebrow .jp {
+  font-family: "Zen Maru Gothic", "Noto Sans JP", "Hiragino Maru Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: .1em;
+  text-transform: none;
+  color: var(--ai);
+}
+
+.wrap {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding-inline: 24px;
+}
+
+section { padding-block: 72px; }
+@media (max-width: 640px) { section { padding-block: 52px; } }
+
+.section-head { max-width: 40em; margin-bottom: 36px; }
+.section-head p { margin-top: .6em; color: var(--muted); }
+
+:focus-visible { outline: 3px solid var(--yamabuki); outline-offset: 3px; }
+
+/* ---------- en-tête ---------- */
+
+.topbar {
+  background: var(--bar);
+  color: var(--on-bar);
+}
+.topbar .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding-block: 12px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--on-bar);
+  text-decoration: none;
+  font-family: "Fredoka", sans-serif;
+  font-weight: 600;
+  font-size: 1.15rem;
+}
+.brand img { width: 44px; height: 44px; }
+.brand:hover { color: var(--yamabuki); }
+.topbar nav { display: flex; gap: 22px; flex-wrap: wrap; }
+.topbar nav a {
+  color: var(--on-bar-muted);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: .95rem;
+}
+.topbar nav a:hover { color: var(--yamabuki); }
+
+/* ---------- accueil ---------- */
+
+.hero .wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  gap: 48px;
+  align-items: center;
+}
+.hero-text { display: flex; flex-direction: column; gap: 22px; }
+.hero-actions { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; margin-top: 6px; }
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: .5em;
+  padding: .75em 1.35em;
+  border-radius: 999px;
+  font-family: "Fredoka", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  border: 2px solid transparent;
+  transition: transform .15s ease, background-color .15s ease;
+}
+.button-primary { background: var(--shu); color: var(--shu-ink); }
+.button-primary:hover { color: var(--shu-ink); transform: translateY(-1px); }
+.button-ghost { border-color: var(--edge); color: var(--ink); }
+.button-ghost:hover { border-color: var(--shu); color: var(--shu); }
+
+/* Le mascotte, comme sur l'icône : un carreau de toile aux coins ronds. */
+.hero-figure { display: flex; justify-content: center; }
+.icon-tile {
+  width: min(100%, 360px);
+  aspect-ratio: 1;
+  border-radius: 22%;
+  overflow: hidden;
+  background: #FCF7ED; /* le fond que porte le dessin lui-même */
+  box-shadow: var(--shadow);
+}
+.icon-tile img { width: 100%; height: 100%; object-fit: cover; }
+
+.figures {
+  display: flex;
+  gap: 32px 40px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  padding-top: 28px;
+  border-top: 1px solid var(--edge);
+}
+.figure { display: flex; flex-direction: column; }
+.figure b {
+  font-family: "Fredoka", sans-serif;
+  font-weight: 600;
+  font-size: 1.9rem;
+  line-height: 1;
+  color: var(--ai);
+  font-variant-numeric: tabular-nums;
+}
+.figure span { color: var(--muted); font-size: .95rem; margin-top: .35em; }
+
+/* ---------- les créatures ---------- */
+
+.bestiary {
+  background: var(--bar);
+  color: var(--on-bar);
+}
+.bestiary .section-head p { color: var(--on-bar-muted); }
+.bestiary .eyebrow .jp { color: var(--yamabuki); }
+.bestiary a { color: var(--yamabuki); }
+
+/* Une fiche à la fois, comme dans le bestiaire de l'application. Le choix se
+   fait sans script : neuf boutons radio, cachés mais accessibles au clavier,
+   et les points sous l'image sont leurs étiquettes. */
+.sheets {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.45fr);
+  grid-template-areas: "figure text" "dots text";
+  gap: 18px 48px;
+  align-items: start;
+}
+.sheets > input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+.sheet-panels { display: contents; }
+.sheet { display: none; }
+.sheet-figure { grid-area: figure; }
+.sheet-figure .paper {
+  aspect-ratio: 5 / 6;
+  border-radius: 22px;
+  background: var(--paper);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.sheet-figure img { max-height: 100%; width: auto; object-fit: contain; }
+.sheet-text {
+  grid-area: text;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  color: var(--on-bar);
+}
+.sheet-name {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  display: flex;
+  align-items: baseline;
+  gap: .5em;
+  flex-wrap: wrap;
+}
+.sheet-name .jp {
+  font-family: "Zen Maru Gothic", "Noto Sans JP", "Hiragino Maru Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+  font-weight: 700;
+  font-size: .7em;
+  color: var(--yamabuki);
+}
+.tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.tag {
+  border: 1.5px solid var(--on-bar-muted);
+  color: var(--on-bar);
+  border-radius: 999px;
+  padding: .05em .8em;
+  font-size: .85rem;
+}
+.tag-rarity { border-color: var(--yamabuki); color: var(--yamabuki); }
+.sheet-text p { opacity: .88; }
+
+.dots {
+  grid-area: dots;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.dots label {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--on-bar-muted);
+  opacity: .55;
+  cursor: pointer;
+  transition: transform .15s ease, opacity .15s ease;
+}
+.dots label:hover { opacity: 1; transform: scale(1.2); }
+
+#sheet-1:checked ~ .sheet-panels .sheet:nth-child(1),
+#sheet-2:checked ~ .sheet-panels .sheet:nth-child(2),
+#sheet-3:checked ~ .sheet-panels .sheet:nth-child(3),
+#sheet-4:checked ~ .sheet-panels .sheet:nth-child(4),
+#sheet-5:checked ~ .sheet-panels .sheet:nth-child(5),
+#sheet-6:checked ~ .sheet-panels .sheet:nth-child(6),
+#sheet-7:checked ~ .sheet-panels .sheet:nth-child(7),
+#sheet-8:checked ~ .sheet-panels .sheet:nth-child(8),
+#sheet-9:checked ~ .sheet-panels .sheet:nth-child(9) { display: contents; }
+
+#sheet-1:checked ~ .dots label:nth-child(1),
+#sheet-2:checked ~ .dots label:nth-child(2),
+#sheet-3:checked ~ .dots label:nth-child(3),
+#sheet-4:checked ~ .dots label:nth-child(4),
+#sheet-5:checked ~ .dots label:nth-child(5),
+#sheet-6:checked ~ .dots label:nth-child(6),
+#sheet-7:checked ~ .dots label:nth-child(7),
+#sheet-8:checked ~ .dots label:nth-child(8),
+#sheet-9:checked ~ .dots label:nth-child(9) { background: var(--yamabuki); opacity: 1; transform: scale(1.3); }
+
+#sheet-1:focus-visible ~ .dots label:nth-child(1),
+#sheet-2:focus-visible ~ .dots label:nth-child(2),
+#sheet-3:focus-visible ~ .dots label:nth-child(3),
+#sheet-4:focus-visible ~ .dots label:nth-child(4),
+#sheet-5:focus-visible ~ .dots label:nth-child(5),
+#sheet-6:focus-visible ~ .dots label:nth-child(6),
+#sheet-7:focus-visible ~ .dots label:nth-child(7),
+#sheet-8:focus-visible ~ .dots label:nth-child(8),
+#sheet-9:focus-visible ~ .dots label:nth-child(9) { outline: 3px solid var(--yamabuki); outline-offset: 3px; }
+
+.sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ---------- ce que l'application fait ---------- */
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 40px 48px;
+}
+.feature {
+  display: grid;
+  grid-template-columns: 84px minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+  padding-top: 22px;
+  border-top: 2px solid var(--edge);
+}
+.feature img { width: 84px; height: 84px; }
+.feature h3 { margin-bottom: .35em; }
+.feature p { color: var(--muted); }
+
+/* ---------- sans compte ---------- */
+
+.private { background: var(--band); }
+.private .wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 48px;
+  align-items: center;
+}
+.private ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 12px;
+}
+.private li {
+  display: grid;
+  grid-template-columns: 26px minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+}
+.private li::before {
+  content: "";
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--shu);
+  margin-top: .25em;
+  /* une coche, dessinée dans la couleur du fond */
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><circle cx='12' cy='12' r='12' fill='black'/><path d='M7 12.5l3.2 3.2L17 9' stroke='white' stroke-width='2.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>") center / contain no-repeat;
+          mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><circle cx='12' cy='12' r='12' fill='black'/><path d='M7 12.5l3.2 3.2L17 9' stroke='white' stroke-width='2.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>") center / contain no-repeat;
+}
+.private .heroes {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 8px;
+}
+.private .heroes img { height: 300px; width: auto; }
+
+/* ---------- où le trouver, contact ---------- */
+
+.stores { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 8px; }
+.store {
+  display: inline-flex;
+  flex-direction: column;
+  padding: .7em 1.3em;
+  border: 2px solid var(--edge);
+  border-radius: 14px;
+  background: var(--card);
+  min-width: 190px;
+  line-height: 1.25;
+}
+.store b { font-family: "Fredoka", sans-serif; font-weight: 600; font-size: 1.05rem; }
+.store span { color: var(--muted); font-size: .85rem; }
+
+.contact .wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 48px;
+  align-items: start;
+}
+.contact address { font-style: normal; }
+.mail {
+  font-family: "Fredoka", sans-serif;
+  font-weight: 600;
+  font-size: clamp(1.1rem, 2.6vw, 1.5rem);
+  word-break: break-all;
+}
+
+/* ---------- pied de page ---------- */
+
+.foot {
+  border-top: 1px solid var(--edge);
+  padding-block: 28px 44px;
+  color: var(--muted);
+  font-size: .92rem;
+}
+.foot .wrap {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px 32px;
+  flex-wrap: wrap;
+}
+.foot nav { display: flex; gap: 22px; flex-wrap: wrap; }
+
+/* ---------- page introuvable ---------- */
+
+.lost .wrap {
+  min-height: 60vh;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 40px;
+  align-items: center;
+}
+.lost .paper {
+  border-radius: 22px;
+  background: var(--paper);
+  padding: 32px;
+  display: flex;
+  justify-content: center;
+}
+.lost .paper img { max-height: 360px; width: auto; }
+
+/* ---------- petits écrans ---------- */
+
+@media (max-width: 820px) {
+  .hero .wrap,
+  .private .wrap,
+  .contact .wrap,
+  .lost .wrap { grid-template-columns: minmax(0, 1fr); }
+  .hero-figure { order: -1; }
+  .icon-tile { width: min(70%, 260px); }
+  .features { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .private .heroes img { height: 220px; }
+  .sheets { grid-template-columns: minmax(0, 1fr); grid-template-areas: "figure" "dots" "text"; gap: 16px; }
+  .sheet-figure .paper { max-width: 320px; margin: 0 auto; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .dots label, .button { transition: none; }
+  .dots label:hover, .button:hover { transform: none; }
+}
