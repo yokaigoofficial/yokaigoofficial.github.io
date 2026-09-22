@@ -321,22 +321,6 @@ section { padding-block: 72px; }
   font-size: .7em;
   color: var(--yamabuki);
 }
-.tags {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.tag {
-  border: 1.5px solid var(--on-bar-muted);
-  color: var(--on-bar);
-  border-radius: 999px;
-  padding: .05em .8em;
-  font-size: .85rem;
-}
-.tag-rarity { border-color: var(--yamabuki); color: var(--yamabuki); }
 .sheet-text p { opacity: .88; }
 
 .dots {
