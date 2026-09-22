@@ -456,22 +456,27 @@ section { padding-block: 72px; }
   gap: 8px;
 }
 .private .heroes img { height: 300px; width: auto; }
+.private-link { margin-top: 24px; }
 
 /* ---------- où le trouver, contact ---------- */
 
 .stores { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 8px; }
 .store {
   display: inline-flex;
-  flex-direction: column;
-  padding: .7em 1.3em;
+  align-items: center;
+  gap: 12px;
+  padding: .6em 1.2em .6em 1em;
   border: 2px solid var(--edge);
   border-radius: 14px;
   background: var(--card);
-  min-width: 190px;
+  min-width: 200px;
   line-height: 1.25;
+  color: var(--ink);
 }
-.store b { font-family: "Fredoka", sans-serif; font-weight: 600; font-size: 1.05rem; }
-.store span { color: var(--muted); font-size: .85rem; }
+.store-icon { width: 28px; height: 28px; flex: none; }
+.store-text { display: flex; flex-direction: column; }
+.store-text b { font-family: "Fredoka", sans-serif; font-weight: 600; font-size: 1.05rem; }
+.store-text > span { color: var(--muted); font-size: .85rem; }
 
 .contact .wrap {
   display: grid;
@@ -480,7 +485,10 @@ section { padding-block: 72px; }
   align-items: start;
 }
 .contact address { font-style: normal; }
+.contact .lede { margin-top: 14px; }
+.contact-note { margin-top: 14px; color: var(--muted); }
 .mail {
+  margin-top: 10px;
   font-family: "Fredoka", sans-serif;
   font-weight: 600;
   font-size: clamp(1.1rem, 2.6vw, 1.5rem);
@@ -502,6 +510,7 @@ section { padding-block: 72px; }
   flex-wrap: wrap;
 }
 .foot nav { display: flex; gap: 22px; flex-wrap: wrap; }
+.foot .marks { flex-basis: 100%; font-size: .8rem; }
 
 /* ---------- page introuvable ---------- */
 
